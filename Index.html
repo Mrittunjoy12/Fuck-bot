@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel</title>
+</head>
+<body>
+    <h2>Registered Users</h2>
+    <table border="1">
+        <tr>
+            <th>Chat ID</th>
+            <th>Email</th>
+            <th>Verified</th>
+        </tr>
+        {% for chat_id, user in users.items() %}
+        <tr>
+            <td>{{ chat_id }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ 'Yes' if user.verified else 'No' }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
